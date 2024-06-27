@@ -4,15 +4,16 @@
   "sideEffects": false,
   "version": "2024.4.4",
   "type": "module",
-  "scripts": {
-    "build": "npm run typecheck && npm run lint && shopify hydrogen build --codegen",
-    "start": "shopify hydrogen preview",
-    "dev": "shopify hydrogen dev --codegen",
-    "preview": "npm run build && shopify hydrogen preview",
-    "lint": "eslint --no-error-on-unmatched-pattern --ext .js,.ts,.jsx,.tsx .",
-    "typecheck": "tsc --noEmit",
-    "codegen": "shopify hydrogen codegen"
-  },
+"scripts": {
+  "build": "npm run typecheck && npm run lint -- --fix && shopify hydrogen build --codegen",
+  "start": "shopify hydrogen preview",
+  "dev": "shopify hydrogen dev --codegen",
+  "preview": "npm run build && shopify hydrogen preview",
+  "lint": "eslint --no-error-on-unmatched-pattern --ext .js,.ts,.jsx,.tsx .",
+  "typecheck": "tsc --noEmit",
+  "codegen": "shopify hydrogen codegen"
+}
+,
   "prettier": "@shopify/prettier-config",
   "dependencies": {
     "@remix-run/react": "^2.8.0",
